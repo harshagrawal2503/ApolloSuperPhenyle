@@ -6,7 +6,7 @@ export default function Products() {
       <h2 className="text-3xl font-semibold text-blue-700 mb-6">Our Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="border p-4 shadow hover:shadow-lg transition">
-          <img src="/whitephenyle.jpg" alt="Product 1" className="w-full h-48 object-cover mb-4"/>
+          <img src="/Whitephenyle.jpg" alt="Product 1" className="w-full h-48 object-cover mb-4"/>
           <h3 className="text-xl font-bold">White Phenyle (1L)</h3>
           <p>Strong disinfectant with a long-lasting fragrance.</p>
         </div>
