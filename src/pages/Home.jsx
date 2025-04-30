@@ -1,42 +1,65 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen bg-white px-4 py-6 flex flex-col items-center">
-      {/* Intro Text */}
-      <div className="text-center max-w-3xl">
-        <h1 className="text-2xl md:text-4xl font-bold text-green-800">
-          Welcome to Apollo Super Phenyle
+    <div className="w-full min-h-screen bg-white flex flex-col items-center px-4 pt-6 pb-12">
+      {/* Hero Section */}
+      <section className="text-center max-w-5xl px-2">
+        <h1 className="text-3xl md:text-5xl font-bold text-green-800 leading-snug">
+          Clean Better. Live Healthier. 🌿
         </h1>
-        <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
-          We bring you the ultimate cleaning solution trusted by households and businesses alike.
-          <br />
-          <span className="font-semibold text-green-700">Apollo Super Phenyle</span> is known for its unmatched <strong>quality</strong>, long-lasting <strong>fragrance</strong>, and powerful <strong>germ-killing formula</strong>.
+        <p className="mt-4 text-gray-700 text-base md:text-lg leading-relaxed">
+          Welcome to <span className="font-bold text-green-700">Apollo Super Phenyle</span> — your reliable source for premium cleaning products trusted by homes and industries alike.
         </p>
-      </div>
+        <Link to="/products">
+          <button className="mt-6 bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-800 transition duration-300 shadow">
+            🛒 Explore Products
+          </button>
+        </Link>
+      </section>
 
-      {/* Highlight Section */}
-      <div className="mt-8 bg-green-100 p-6 rounded-lg shadow-md max-w-4xl w-full text-center">
-        <h2 className="text-xl md:text-2xl font-semibold text-green-900 mb-2">
-          🧴 Best in Quality & Power
-        </h2>
-        <p className="text-gray-800 text-sm md:text-base">
-          Apollo Super Phenyle keeps your surroundings <strong>clean</strong>, <strong>fresh</strong>, and <strong>free from insects</strong> like mosquitoes and flies.
-          <br />
-          Ideal for daily use in homes, hospitals, schools, offices, and more.
+      {/* Feature Grid */}
+      <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full px-2">
+        <FeatureCard emoji="🧴" title="Trusted Formula" text="Powerful phenyle & disinfectants for every setting." />
+        <FeatureCard emoji="🌸" title="Fresh Fragrance" text="Long-lasting natural aroma for clean environments." />
+        <FeatureCard emoji="✅" title="Quality Certified" text="Tested & packaged with care across all variants." />
+      </section>
+
+      {/* Product Banner Image */}
+      <section className="mt-14 w-full max-w-6xl px-2 flex justify-center">
+  <div className="overflow-hidden rounded-lg shadow-lg w-full">
+    <img
+      src="/images/apollowhitebanner.jpg"
+      alt="Apollo Phenyle Banner"
+      className="w-screen h-auto max-h-screen object-contain"
+    />
+  </div>
+</section>
+
+      {/* Call to Action Section */}
+      <section className="mt-14 bg-green-700 text-white text-center py-10 px-6 rounded-lg shadow max-w-5xl w-full">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-3">Become a Distributor or Bulk Buyer 📦</h2>
+        <p className="text-sm md:text-base">
+          Get attractive wholesale pricing and doorstep delivery across India.
         </p>
-      </div>
-
-      {/* Banner Image - FULL SIZE BELOW CONTENT */}
-      <div className="mt-10 w-full flex justify-center">
-        <img
-          src="/banner.jpg"
-          alt="Apollo Super Phenyle Banner"
-          className="w-full max-w-5xl h-auto object-contain"
-        />
-      </div>
+        <Link to="/contact">
+          <button className="mt-4 bg-white text-green-700 px-6 py-2 rounded-full hover:bg-gray-100 transition">
+            📞 Contact Us
+          </button>
+        </Link>
+      </section>
     </div>
   );
 };
 
+const FeatureCard = ({ emoji, title, text }) => (
+  <div className="bg-green-50 p-6 rounded-lg text-center shadow hover:shadow-md transition">
+    <div className="text-4xl mb-2">{emoji}</div>
+    <h3 className="text-lg font-semibold text-green-800 mb-1">{title}</h3>
+    <p className="text-gray-700 text-sm leading-relaxed">{text}</p>
+  </div>
+);
+
 export default Home;
+
